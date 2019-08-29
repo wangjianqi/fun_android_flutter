@@ -70,6 +70,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
               ],
             ),
           ),
+          ///Align
           Align(
             alignment: Alignment.bottomRight,
             child: SafeArea(
@@ -82,10 +83,12 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                   margin: EdgeInsets.only(right: 20, bottom: 20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(40),
+                    ///Alpha
                     color: Colors.black.withAlpha(100),
                   ),
                   child: AnimatedCountdown(
                     context: context,
+                    ///StepTween
                     animation: StepTween(begin: 3, end: 0)
                         .animate(_countdownController),
                   ),
@@ -121,6 +124,7 @@ class AnimatedCountdown extends AnimatedWidget {
   }
 }
 
+///Logo动画
 class AnimatedFlutterLogo extends AnimatedWidget {
   AnimatedFlutterLogo({
     Key key,
@@ -171,6 +175,7 @@ class AnimatedAndroidLogo extends AnimatedWidget {
 }
 
 void nextPage(context) {
+  ///pushReplacementNamed
   Navigator.of(context).pushReplacementNamed(RouteName.tab);
 }
 

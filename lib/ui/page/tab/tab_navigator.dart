@@ -33,6 +33,7 @@ class _TabNavigatorState extends State<TabNavigator> {
           }
           return true;
         },
+        ///PageView
         child: PageView.builder(
           itemBuilder: (ctx, index) => pages[index],
           itemCount: pages.length,

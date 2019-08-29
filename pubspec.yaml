@@ -4,7 +4,7 @@ description: Fun or Flutter for Android
 version: 0.1.1+1
 
 environment:
-  sdk: ">=2.4.0 <3.0.0"
+  sdk: ">=2.3.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -52,7 +52,7 @@ dependencies:
   shimmer: ^1.0.0
   # 更新展示支持mark_down
   flutter_markdown: ^0.2.0
-  flare_flutter: 1.5.5
+  flare_flutter: any
 
   # third_app
   share: 0.6.2+1 #分享

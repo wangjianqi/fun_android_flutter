@@ -32,11 +32,13 @@ main() async {
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ///OKToast
     return OKToast(
         child: MultiProvider(
             providers: providers,
             child: Consumer2<ThemeModel, LocaleModel>(
                 builder: (context, themeModel, localeModel, child) {
+                  ///配置刷新
               return RefreshConfiguration(
                 hideFooterWhenNotFull: true, //列表数据不满一页,不触发加载更多
                 child: MaterialApp(
@@ -51,7 +53,9 @@ class App extends StatelessWidget {
                     GlobalWidgetsLocalizations.delegate
                   ],
                   supportedLocales: S.delegate.supportedLocales,
+                  ///路由
                   onGenerateRoute: Router.generateRoute,
+                  ///初始化路由
                   initialRoute: RouteName.splash,
                 ),
               );

@@ -59,6 +59,7 @@ class _HomePageState extends State<HomePage>
                 if (homeModel.error) {
                   return ViewStateWidget(onPressed: homeModel.initData);
                 }
+                ///copy
                 return RefreshConfiguration.copyAncestor(
                   context: context,
                   // 下拉触发二楼距离
@@ -71,6 +72,7 @@ class _HomePageState extends State<HomePage>
                       controller: homeModel.refreshController,
                       header: HomeRefreshHeader(),
                       onTwoLevel: () async {
+                        ///TODO ----
                         await Navigator.of(context)
                             .pushNamed(RouteName.homeSecondFloor);
                         await Future.delayed(Duration(milliseconds: 300));
@@ -103,8 +105,10 @@ class _HomePageState extends State<HomePage>
                             flexibleSpace: FlexibleSpaceBar(
                               background: BannerWidget(),
                               centerTitle: true,
+                              ///点击标题
                               title: GestureDetector(
                                 onDoubleTap: tapToTopModel.scrollToTop,
+                                ///显示动画
                                 child: EmptyAnimatedSwitcher(
                                   display: tapToTopModel.showTopBtn,
                                   child: Text(S.of(context).appName),
@@ -124,6 +128,7 @@ class _HomePageState extends State<HomePage>
                       )),
                 );
               })),
+          ///float按钮
           floatingActionButton: ScaleAnimatedSwitcher(
             child: tapToTopModel.showTopBtn &&
                     homeModel.refreshController.headerStatus !=
@@ -132,6 +137,7 @@ class _HomePageState extends State<HomePage>
                     heroTag: 'homeEmpty',
                     key: ValueKey(Icons.vertical_align_top),
                     onPressed: () {
+                      ///滑到顶部
                       tapToTopModel.scrollToTop();
                     },
                     child: Icon(
@@ -142,6 +148,7 @@ class _HomePageState extends State<HomePage>
                     heroTag: 'homeFab',
                     key: ValueKey(Icons.search),
                     onPressed: () {
+                      ///搜索
                       showSearch(
                           context: context, delegate: DefaultSearchDelegate());
                     },
@@ -156,6 +163,7 @@ class _HomePageState extends State<HomePage>
   }
 }
 
+///swiper
 class BannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

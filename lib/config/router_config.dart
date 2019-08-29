@@ -32,6 +32,7 @@ class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouteName.splash:
+        ///启动页
         return NoAnimRouteBuilder(SplashPage());
       case RouteName.tab:
         return NoAnimRouteBuilder(TabNavigator());

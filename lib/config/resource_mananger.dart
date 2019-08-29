@@ -15,6 +15,7 @@ class ImageHelper {
     return imagePrefix + url;
   }
 
+  ///获取图片
   static String wrapAssets(String url) {
     return "assets/images/" + url;
   }
